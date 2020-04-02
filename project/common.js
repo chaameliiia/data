@@ -44,9 +44,12 @@ window.addEventListener('DOMContentLoaded', function() {
   var outputImg = imgStr.split(',');
    // console.log(imgStr.split(','));
   // split('a'): a기준으로 문자열 잘라서 배열로 저장
+  var docDiv = document.querySelector('div');
   var outputDiv = document.querySelector('.output');
 
-  for(var i = 0; i < outputImg.length; i++) {
-    outputDiv.innerHTML += `<img src="${outputImg[i]}" alt="">`  
+  if(docDiv.classList.contains('output')) {
+    for(var i = 0; i < outputImg.length; i++) {
+      outputDiv.innerHTML += `<img src="${outputImg[i]}" alt="">`  
+    }
   }
 });
