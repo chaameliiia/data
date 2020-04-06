@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>BRACKETS 으로 시작하기</title>
+  <meta name="description" content="Brackets에 대한 대화식 시작 안내서입니다.">
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <h1>약관동의</h1>
+  <form name="join">
+      <p><input type="checkbox" placeholder="name" name="all">전체동의</p>
+      <p><input type="checkbox" name="poll"> 개인정보동의</p>
+      <p><textarea cols=50 rows=10>개인정보 내용</textarea></p>
+      <p><input type="checkbox" name="agree">약관동의</p>
+      <p><textarea cols=50 rows=10>약관동의 내용</textarea></p>
+      <p><input type="button" name="yes" value="확인"><input type="reset"></p>
+  </form>
+  <script>
+    join.all.addEventListener('click', function() {
+      // console.log(join.all.value); // on: 클릭됐는지 안 됐는지
+      console.log(join.all.checked); // true or false
+
+      // join.all의 값 자식 요소가 그대로 받아쓰는 방식
+      join.poll.checked = join.all.checked;
+      join.agree.checked = join.all.checked;
+      // join.all.checked의 값 자체가 true, false로 나오므로 굳이 조건문 활용할 필요 없음
+
+    //   if(join.all.checked) {
+    //     // join.poll.checked = true;
+    //     // join.agree.checked = true;
+    //   } else {
+    //     // join.poll.checked = false;
+    //     // join.agree.checked = false;
+    //   }
+    });
+
+    join.yes.addEventListener('click', function() {
+    //   location.href = 'join2.html'; // 확인 버튼 누르면 join2로 페이지 이동
+
+    //   if(!join.poll.checked) {
+    //     alert('개인정보동의 체크해주세요');
+    //     return;
+    //   }
+      if(!check(join.poll, '개인정보동의 체크해주세요')) {
+        return;
+      }
+    //   if(!join.agree.checked) {
+    //     alert('약관동의 체크해주세요');
+    //     return;
+    //   }
+      if(!check(join.agree, '약관동의 체크해주세요')) {
+        return;
+      }
+
+      function check(id, msg) {
+        if(id.checked) {
+          return true;
+        }
+        alert(msg);
+      }
+      
+      // join form 안에 입력된 내용 같이 넘겨줌
+      join.action = 'join2.html'; // form 속성 form 넘겨줄 페이지
+      join.submit(); // form 내용 같이 가지고 갈 수 있음
+
+    });
+  </script>
+</body>
+</html>

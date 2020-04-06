@@ -25,8 +25,8 @@
     localStorage.setItem('thrday', 'popup3');
 
     // get
-    alert(localStorage.oneday); // 객체 형식, 키 값으로 데이터 접근
-    alert(localStorage.getItem('twoday'));
+    // alert(localStorage.oneday); // 객체 형식, 키 값으로 데이터 접근
+    // alert(localStorage.getItem('twoday'));
 
     //remove
     localStorage.removeItem('thrday');
@@ -66,6 +66,9 @@
     function getCookie() {
       if(document.cookie.match('popup') != null) { // popup 있는지 없는지 확인 
         // match('a'): a와 일치하는 데이터만 뽑아줌, 없으면 null
+        //             → 검색 기능에 활용 가능
+
+
         popDiv.style.display = 'none'; // 쿠키에 popop 있으면 숨김
       } else {
         popDiv.style.display = 'block'; // 쿠키에 popup 없으면 보임
