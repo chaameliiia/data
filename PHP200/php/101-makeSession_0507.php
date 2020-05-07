@@ -3,6 +3,9 @@
 
     //세션 생성
     $_SESSION['userId'] = 'everdevel';
+    /* 0507
+      $_SESSION[]: 세션 파일 만듦 → 흔적으로 쿠키 값 남음
+    */
 
     if (isset($_SESSION['userId'])) {
         echo "세션 생성 완료 세션 userId의 값 : {$_SESSION['userId']}";

@@ -5,7 +5,7 @@
         echo 'userId 세션이 존재합니다.';
 
         //세션이 존재하므로 unset()사용하여 삭제
-        unset($_SESSION['userId']);
+        unset($_SESSION['userId']); // 개별 세션 선택 삭제
     } else {
         echo 'userId 세션이 존재하지 않습니다.';
     }

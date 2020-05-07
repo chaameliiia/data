@@ -1,6 +1,7 @@
 <?php
     //배열 선언
     $earth = array();
+    // $earth = [];
 
     //earth의 0 인덱스에 'korea'를 대입
     $earth[0] = 'korea';

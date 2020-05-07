@@ -4,6 +4,14 @@
     //배열 dr에 continent 인덱스를 생성하고 이것을 배열로 선언
     $dr['continent'] = array();
 
+    /* 0507 배열 중첩 선언 가능
+        $dr = [
+        'continent' => [
+                        'america' => ['애너하임', '올랜도']
+                        ]
+        ];
+    */
+
     //배열 dr['continent']에 ['america']인덱스를 생성 후 배열로 선언
     $dr['continent']['america'] = array();
     $dr['continent']['america'][0] = '애너하임';
@@ -32,4 +40,13 @@
 
     echo "유럽 :<br>";
     echo $dr['continent']['europe'][0];
+
+    /* 0507
+        $arr = [
+        [10, 20, 30],
+        [40, 50, 60]
+        ];
+
+        $arr[0][1] // 20
+    */
 ?>
