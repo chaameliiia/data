@@ -1,0 +1,3 @@
+xampp > apache > conf > httpd.conf
+
+- documentroot 검색 > root 폴더 경로 복붙
